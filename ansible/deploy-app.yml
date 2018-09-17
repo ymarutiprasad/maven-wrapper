@@ -1,0 +1,19 @@
+---
+- hosts: all
+
+  vars:
+    app_path: "/opt/usr/apps/csr_tool"
+    owner: "kitchen"
+    group: "kitchen"
+    src_file_name: "csr.tgz"
+    environment: "qa"
+
+  tasks:
+
+   - name: update /etc/sysctl.conf
+     lineinfile:
+     path: /etc/sysctl.conf
+     state: present
+     regexp: '^vm.swappiness\s'
+     line: 'vm.swappiness = 1'
+     
