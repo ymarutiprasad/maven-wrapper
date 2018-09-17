@@ -10,10 +10,10 @@
 
   tasks:
 
-   - name: update /etc/sysctl.conf
+   - name: update /tmp/sysctl.conf
      lineinfile:
-     path: /etc/sysctl.conf
-     state: present
-     regexp: '^vm.swappiness\s'
-     line: 'vm.swappiness = 1'
+       path: /tmp/sysctl.conf
+       state: present
+       regexp: '^vm.swappiness\s'
+       line: 'vm.swappiness = 1'
      
